@@ -23,4 +23,6 @@ jobs:
         with:
           lint-path: hello.py
           python-version: 3.9
+      - name: Semgrep Scan
+        uses: MetaMask/Semgrep-action@main
           

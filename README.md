@@ -14,4 +14,4 @@ SCA : Py-pi dependancy check
 Tests unitaires
 détection de secrets : gitleaks
 
-![pylint]()
+![pylint](https://img.shields.io/badge/PyLint-0.00-red?logo=python&logoColor=white)

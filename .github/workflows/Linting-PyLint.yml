@@ -1,0 +1,26 @@
+name: Linting with pylint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: pylint check
+        uses: Silleellie/pylint-github-action@v2.1
+        with:
+          lint-path: hello.py
+          python-version: 3.9
+          

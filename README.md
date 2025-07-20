@@ -1,5 +1,6 @@
 # CICD
-Workflow CICD pour application Python
+
+Workflow CICD pour application Python (à définir)
 
 Actuellement implémenté :
 

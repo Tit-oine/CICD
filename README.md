@@ -1,2 +1,14 @@
 # CICD
 Workflow CICD pour application Python
+
+Actuellement implémenté :
+
+En cours d'implémentation :
+Linting : flake8
+
+Prochainement :
+SAST : semgrep
+DAST : ZAP Action Full Scan
+SCA : Py-pi dependancy check
+Tests unitaires
+détection de secrets : gitleaks

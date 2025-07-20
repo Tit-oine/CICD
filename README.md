@@ -13,3 +13,5 @@ DAST : ZAP Action Full Scan
 SCA : Py-pi dependancy check
 Tests unitaires
 détection de secrets : gitleaks
+
+![pylint]()

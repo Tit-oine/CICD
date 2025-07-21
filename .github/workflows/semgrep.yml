@@ -24,11 +24,7 @@ jobs:
       - name: pylint check
         uses: Silleellie/pylint-github-action@v2.1
         with:
-<<<<<<< HEAD
           lint-path: dvv/run.py
-=======
-          lint-path: C:\Users\tmauc\OneDrive\Documents\DevOps\CICD\CICD\dvv
->>>>>>> 5cf380648bdab8c0f827f99a28ff1a0efe0a6bee
           python-version: 3.9
       - name: Semgrep Scan
         uses: MetaMask/Semgrep-action@main

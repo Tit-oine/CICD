@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile.db
     ports:
       - 5432:5432
+    image: dvwa-postfile.db
 
   redis:
     image: redis:alpine
@@ -15,6 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.app
+    image: dvwa-app
     depends_on:
       - postgres
       - redis

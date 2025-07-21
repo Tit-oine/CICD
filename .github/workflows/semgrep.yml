@@ -32,10 +32,17 @@ jobs:
         run: docker compose up --build -d
       - name: Wait for the launch
         run: sleep 10
-      - name: Security Scan with Trivy
+      - name: Security Scan of the app with Trivy
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'dvmpa'
+          image-ref: 'dvmpa-app'
+          format: 'table'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+      - name: Security Scan of the DB with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'dvmpa-postgres'
           format: 'table'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'

@@ -14,6 +14,6 @@ Prochainement :
 Tests unitaires
 détection de secrets : gitleaks
 
-![pylint](https://img.shields.io/badge/PyLint-0.00-red?logo=python&logoColor=white)
+![pylint](https://img.shields.io/badge/PyLint-7.07-orange?logo=python&logoColor=white)
 
 changement

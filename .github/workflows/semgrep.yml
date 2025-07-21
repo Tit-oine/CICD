@@ -28,8 +28,10 @@ jobs:
           python-version: 3.9
       - name: Semgrep Scan
         uses: MetaMask/Semgrep-action@main
-      - name: build Docker image
-        run: docker build -t dvpma .
+      - name: Build and start services
+        run: docker compose up --build -d
+      - name: Wait for the launch
+        run: sleep 10
       - name: Security Scan with Trivy
         uses: aquasecurity/trivy-action@master
         with:
@@ -37,3 +39,6 @@ jobs:
           format: 'table'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
+      - name: Stop and clean containers
+        if: always()
+        run: docker compose down

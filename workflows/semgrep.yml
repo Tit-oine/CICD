@@ -1,0 +1,38 @@
+name: Linting with pylint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Installer les dépendances Python
+        run:  python -m pip install --upgrade pip
+              pip install -r requirements.txt
+      - name: pylint check
+        uses: Silleellie/pylint-github-action@v2.1
+        with:
+          lint-path: sqli
+          python-version: 3.9
+      - name: Semgrep Scan
+        uses: MetaMask/Semgrep-action@main
+      - name: build Docker image
+        run: docker build -t dvpma .
+      - name: Security Scan with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'dvmpa'
+          format: 'table'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'

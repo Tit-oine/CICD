@@ -24,7 +24,7 @@ jobs:
       - name: pylint check
         uses: Silleellie/pylint-github-action@v2.1
         with:
-          lint-path: hello.py
+          lint-path: sqli
           python-version: 3.9
       - name: Semgrep Scan
         uses: MetaMask/Semgrep-action@main

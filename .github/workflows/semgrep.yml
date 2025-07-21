@@ -35,14 +35,14 @@ jobs:
       - name: Security Scan of the app with Trivy
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'dvmpa-app'
+          image-ref: 'dvwpa-app'
           format: 'table'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
       - name: Security Scan of the DB with Trivy
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'dvmpa-postgres'
+          image-ref: 'dvwpa-postfile'
           format: 'table'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
